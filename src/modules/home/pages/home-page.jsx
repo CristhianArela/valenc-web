@@ -52,7 +52,7 @@ const HomePage = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // 🚀 MANEJO DEL FORMULARIO CON FORMSPREE
+  // MANEJO DEL FORMULARIO CON FORMSPREE
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormStatus('sending');
@@ -89,7 +89,7 @@ const HomePage = () => {
 
   // Función para abrir WhatsApp
   const openWhatsApp = () => {
-    const phoneNumber = "51914112487"; // 👈 CAMBIA ESTE NÚMERO POR EL TUYO
+    const phoneNumber = "51914112487"; // CAMBIA ESTE NÚMERO POR EL TUYO
     const message = encodeURIComponent("¡Hola! Me interesa conocer más sobre los servicios de Valenc Company. ¿Podrían brindarme más información?");
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -110,7 +110,8 @@ const HomePage = () => {
         ? 'bg-blue-900/95 backdrop-blur-md py-3'
         : 'bg-gradient-to-r from-blue-900 to-slate-800 py-4'
         }`}>
-        <div className="px-6 lg:px-12">
+        {/* Contenedor centrado para pantallas grandes */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <div className="text-2xl sm:text-3xl font-bold text-yellow-400 drop-shadow-lg">
               VALENC
@@ -130,6 +131,15 @@ const HomePage = () => {
               >
                 Servicios
               </button>
+
+              {/* Nuevo: Quiénes Somos */}
+              <button
+                onClick={() => scrollToSection('#quienes')}
+                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:-translate-y-1"
+              >
+                Quiénes Somos
+              </button>
+
               <button
                 onClick={() => scrollToSection('#contacto')}
                 className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:-translate-y-1"
@@ -138,7 +148,7 @@ const HomePage = () => {
               </button>
             </div>
 
-            {/* 🍔 BOTÓN HAMBURGUESA MÓVIL */}
+            {/* BOTÓN HAMBURGUESA MÓVIL */}
             <button
               onClick={toggleMobileMenu}
               className="md:hidden relative w-10 h-10 flex items-center justify-center bg-yellow-400/20 backdrop-blur-sm rounded-lg border border-yellow-400/30 transition-all duration-300 hover:bg-yellow-400/30 hover:scale-110"
@@ -165,7 +175,7 @@ const HomePage = () => {
 
           </div>
 
-          {/* 📱 MENÚ MÓVIL DESPLEGABLE */}
+          {/* MENÚ MÓVIL DESPLEGABLE */}
           <div className={`md:hidden absolute top-full left-0 right-0 bg-blue-900/95 backdrop-blur-md border-t border-yellow-400/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
             }`}>
             <div className="px-6 py-6 space-y-4">
@@ -173,21 +183,28 @@ const HomePage = () => {
                 onClick={() => scrollToSection('#inicio')}
                 className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">🏠</span>
+                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('#servicios')}
                 className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">⚙️</span>
+                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Servicios
+              </button>
+              <button
+                onClick={() => scrollToSection('#quienes')}
+                className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
+              >
+                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                Quiénes Somos
               </button>
               <button
                 onClick={() => scrollToSection('#contacto')}
                 className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">📞</span>
+                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Contacto
               </button>
             </div>
@@ -204,7 +221,8 @@ const HomePage = () => {
           <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-yellow-400/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="relative z-10 px-6 lg:px-12">
+        {/* Contenedor centrado para pantallas grandes */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
             VALENC COMPANY
           </h1>
@@ -223,9 +241,105 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Quiénes Somos (estilo igual a Servicios) */}
+      <section id="quienes" className="py-20 w-full bg-gradient-to-br from-gray-50 to-gray-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div
+            className={`text-center mb-16 transition-all duration-500 ${visibleElements.has('quienes-header')
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-16'
+              }`}
+            data-animate="quienes-header"
+          >
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative">
+              Quiénes Somos
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-blue-500 rounded-full"></div>
+            </h2>
+
+            {/* Texto de presentación — ahora con estilos mejorados y coherentes */}
+            <p className="text-gray-600 text-lg sm:text-xl lg:text-xl font-light leading-relaxed max-w-3xl mx-auto px-4 md:px-0 mb-4 tracking-wide">
+              Somos <span className="font-semibold text-slate-800">Valenc Company</span> — especialistas en obras públicas y privadas y en alquiler de maquinaria pesada.
+              Combinamos experiencia local con procesos modernos para entregar proyectos seguros, eficientes y sostenibles. Nuestro enfoque es técnico, responsable y orientado a resultados.
+            </p>
+
+            {/* Pequeña nota decorativa / llamado */}
+            <p className="text-sm text-slate-500 max-w-2xl mx-auto">
+              Operamos con normas de seguridad y equipos propios para cumplir plazos y calidad en cada proyecto.
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {/* Bloque principal: texto + imagen (ya existía) */}
+            <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-500 ${visibleElements.has('quienes-card')
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-24'
+              }`} data-animate="quienes-card">
+              {/* Texto en tarjeta blanca (igual look que otros cards) */}
+              <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-blue-500"></div>
+                <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">Nuestra misión</h3>
+                <p className="text-gray-600 text-lg mb-6">
+                  Brindar soluciones integrales en construcción y maquinaria, priorizando seguridad, calidad y cumplimiento de plazos para maximizar el valor de cada proyecto.
+                </p>
+
+                <h4 className="text-xl font-semibold text-slate-800 mb-3">Visión</h4>
+                <p className="text-gray-600 mb-6">Ser referentes regionales en ejecución de obras y servicios de maquinaria, innovando continuamente y cuidando el entorno.</p>
+
+                <div className="grid sm:grid-cols-2 gap-4 mt-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-yellow-400 rounded-full text-white font-bold">C</div>
+                    <div>
+                      <h5 className="font-semibold text-slate-800">Compromiso</h5>
+                      <p className="text-gray-600 text-sm">Cumplimos lo que prometemos.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-blue-500 rounded-full text-white font-bold">S</div>
+                    <div>
+                      <h5 className="font-semibold text-slate-800">Seguridad</h5>
+                      <p className="text-gray-600 text-sm">Protegemos a nuestro equipo y clientes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Imagen con overlay (mismo feel que otras cards) */}
+              <div className="rounded-3xl overflow-hidden shadow-xl transition-all duration-400 hover:scale-105 relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1581090700227-4c4f50b06558?auto=format&fit=crop&w=1200&q=80"
+                  alt="Maquinaria y equipo"
+                  className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+              </div>
+            </div>
+
+
+            {/* Segunda fila - valores/beneficios (coherente con services) */}
+            <div className={`grid lg:grid-cols-3 gap-8 transition-all duration-500 ${visibleElements.has('quienes-values')
+              ? 'opacity-100 translate-x-0'
+              : 'opacity-0 -translate-x-24'
+              }`} data-animate="quienes-values">
+              {[
+                { title: 'Equipos Modernos', text: 'Contamos con maquinaria reciente y mantenida para mayor eficiencia.' },
+                { title: 'Equipo Especializado', text: 'Personal capacitado en seguridad y operación de equipos.' },
+                { title: 'Soporte Integral', text: 'Asesoría y logística completa para tu proyecto.' }
+              ].map((item, i) => (
+                <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all">
+                  <h4 className="text-xl font-semibold text-slate-800 mb-3">{item.title}</h4>
+                  <p className="text-gray-600">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Servicios */}
       <section id="servicios" className="py-20 w-full bg-gradient-to-br from-gray-50 to-gray-200">
-        <div className="px-6 lg:px-12">
+        {/* Contenedor centrado para pantallas grandes */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Header */}
           <div
             className={`text-center mb-20 transition-all duration-500 ${visibleElements.has('servicios-header')
@@ -266,7 +380,7 @@ const HomePage = () => {
                     'Proyectos de desarrollo urbano'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">◐</span>
+                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -311,7 +425,7 @@ const HomePage = () => {
                     'Proyectos arquitectónicos especializados'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">◐</span>
+                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -340,7 +454,7 @@ const HomePage = () => {
                     'Herramientas especializadas'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">◐</span>
+                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -389,7 +503,7 @@ const HomePage = () => {
                       key={index}
                       className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2"
                     >
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">◐</span>
+                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -402,7 +516,8 @@ const HomePage = () => {
 
       {/* Contacto */}
       <section id="contacto" className="py-20 w-full bg-gradient-to-br from-blue-900 to-slate-800 text-white">
-        <div className="px-6 lg:px-12">
+        {/* Contenedor centrado para pantallas grandes */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div
             className={`text-center mb-20 transition-all duration-500 ${visibleElements.has('contacto-header')
               ? 'opacity-100 translate-x-0'
@@ -429,10 +544,10 @@ const HomePage = () => {
               data-animate="contacto-info"
             >
               {[
-                { icon: '📧', title: 'Email', info: 'info@valenccompany.com' },
-                { icon: '📞', title: 'Teléfono', info: '+51 987 654 321' },
-                { icon: '📍', title: 'Ubicación', info: 'Puerto Maldonado, Madre de Dios' },
-                { icon: '🕐', title: 'Horarios', info: 'Lun - Vie: 8:00 AM - 6:00 PM' }
+                { icon: '✉', title: 'Email', info: 'info@valenccompany.com' },
+                { icon: '📞', title: 'Teléfono', info: '+51 914 112 487' },
+                { icon: '📍', title: 'Ubicación', info: 'Puno' },
+                { icon: '🕒', title: 'Horarios', info: 'Lun - Vie: 8:00 AM - 6:00 PM' }
               ].map((contact, index) => (
                 <div
                   key={index}
@@ -449,7 +564,7 @@ const HomePage = () => {
               ))}
             </div>
 
-            {/* 🚀 FORMULARIO CON FORMSPREE */}
+            {/* FORMULARIO CON FORMSPREE */}
             <div
               className={`transition-all duration-500 ${visibleElements.has('contacto-form')
                 ? 'opacity-100 translate-x-0'
@@ -474,53 +589,53 @@ const HomePage = () => {
                       className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-yellow-400 font-semibold mb-3 text-lg">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="tu@email.com"
-                    required
-                    className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
-                  />
-                </div>
+                  <div>
+                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="tu@email.com"
+                      required
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-yellow-400 font-semibold mb-3 text-lg">
-                    Teléfono
-                  </label>
-                  <input
-                    type="tel"
-                    name="telefono"
-                    placeholder="+51 999 999 999"
-                    className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
-                  />
-                </div>
+                  <div>
+                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      name="telefono"
+                      placeholder="+51 999 999 999"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-yellow-400 font-semibold mb-3 text-lg">
-                    Servicio de Interés
-                  </label>
-                  <select
-                    name="servicio"
-                    className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15"
-                  >
-                    <option value="" className="bg-slate-800 text-white">Selecciona un servicio</option>
-                    <option value="obras-publicas" className="bg-slate-800 text-white">Obras Públicas</option>
-                    <option value="construccion-privada" className="bg-slate-800 text-white">Construcción Privada</option>
-                    <option value="alquiler-maquinaria" className="bg-slate-800 text-white">Alquiler de Maquinaria</option>
-                    <option value="venta-agregados" className="bg-slate-800 text-white">Venta de Agregados</option>
-                    <option value="consultoria" className="bg-slate-800 text-white">Consultoría</option>
-                  </select>
+                  <div>
+                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                      Servicio de Interés
+                    </label>
+                    <select
+                      name="servicio"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15"
+                    >
+                      <option value="" className="bg-slate-800 text-white">Selecciona un servicio</option>
+                      <option value="obras-publicas" className="bg-slate-800 text-white">Obras Públicas</option>
+                      <option value="construccion-privada" className="bg-slate-800 text-white">Construcción Privada</option>
+                      <option value="alquiler-maquinaria" className="bg-slate-800 text-white">Alquiler de Maquinaria</option>
+                      <option value="venta-agregados" className="bg-slate-800 text-white">Venta de Agregados</option>
+                      <option value="consultoria" className="bg-slate-800 text-white">Consultoría</option>
+                    </select>
+                  </div>
+
                   <div>
                     <label className="block text-yellow-400 font-semibold mb-3 text-lg">
                       Mensaje *
                     </label>
-
                     <textarea
                       name="mensaje"
                       rows="5"
@@ -529,7 +644,8 @@ const HomePage = () => {
                       className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 resize-none"
                     ></textarea>
                   </div>
-                  {/* 🚀 BOTÓN CON ESTADOS MEJORADOS */}
+
+                  {/* BOTÓN CON ESTADOS MEJORADOS */}
                   <button
                     type="submit"
                     disabled={formStatus === 'sending'}
@@ -543,12 +659,12 @@ const HomePage = () => {
                       }`}
                   >
                     {formStatus === 'sending'
-                      ? '✨ Enviando...'
+                      ? 'Enviando...'
                       : formStatus === 'sent'
-                        ? '🎉 ¡Mensaje Enviado!'
+                        ? '¡Mensaje Enviado!'
                         : formStatus === 'error'
-                          ? '❌ Error - Intenta de nuevo'
-                          : '🚀 Enviar Mensaje'
+                          ? 'Error - Intenta de nuevo'
+                          : 'Enviar Mensaje'
                     }
                   </button>
 
@@ -568,7 +684,8 @@ const HomePage = () => {
 
       {/* Footer */}
       <footer className="bg-slate-800 text-white text-center py-12 border-t-4 border-yellow-400 w-full">
-        <div className="px-6 lg:px-12">
+        {/* Contenedor centrado para pantallas grandes */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="text-lg lg:text-xl mb-3 font-medium">&copy; 2025 Valenc Company. Todos los derechos reservados.</p>
           <p className="text-gray-400 text-base lg:text-lg">Construyendo el futuro con excelencia y compromiso</p>
         </div>
@@ -655,6 +772,13 @@ const HomePage = () => {
 
         ::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #f59e0b, #d97706);
+        }
+
+        /* Contenedor centrado para pantallas grandes */
+        @media (min-width: 1536px) {
+          .max-w-7xl {
+            max-width: 1280px;
+          }
         }
       `}</style>
     </div>
