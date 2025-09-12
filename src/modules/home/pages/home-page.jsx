@@ -107,27 +107,31 @@ const HomePage = () => {
 
       {/* Navegación */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-blue-900/95 backdrop-blur-md py-3'
-        : 'bg-gradient-to-r from-blue-900 to-slate-800 py-4'
+        ? 'bg-slate-700/95 backdrop-blur-md py-3'
+        : 'bg-gradient-to-r from-slate-600 to-slate-700 py-4'
         }`}>
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
-            <div className="text-2xl sm:text-3xl font-bold text-yellow-400 drop-shadow-lg">
-              VALENC
+            <div className="flex items-center">
+              <img 
+                src="/src/assets/logo.png" 
+                alt="Valenc Company Logo" 
+                className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto drop-shadow-lg"
+              />
             </div>
 
             {/* Menú Desktop */}
             <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => scrollToSection('#inicio')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:-translate-y-1"
+                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
               >
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('#servicios')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:-translate-y-1"
+                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
               >
                 Servicios
               </button>
@@ -135,14 +139,14 @@ const HomePage = () => {
               {/* Nuevo: Quiénes Somos */}
               <button
                 onClick={() => scrollToSection('#quienes')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:-translate-y-1"
+                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
               >
                 Quiénes Somos
               </button>
 
               <button
                 onClick={() => scrollToSection('#contacto')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:-translate-y-1"
+                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
               >
                 Contacto
               </button>
@@ -151,23 +155,23 @@ const HomePage = () => {
             {/* BOTÓN HAMBURGUESA MÓVIL */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center bg-yellow-400/20 backdrop-blur-sm rounded-lg border border-yellow-400/30 transition-all duration-300 hover:bg-yellow-400/30 hover:scale-110"
+              className="md:hidden relative w-10 h-10 flex items-center justify-center bg-slate-300/20 backdrop-blur-sm rounded-lg border border-slate-300/30 transition-all duration-300 hover:bg-slate-300/30 hover:scale-110"
               aria-label="Menú de navegación"
             >
               <div className="relative w-6 h-6 flex flex-col justify-between items-center">
                 {/* Línea 1 */}
                 <span
-                  className={`h-0.5 w-6 bg-yellow-400 transform transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2.5" : ""
+                  className={`h-0.5 w-6 bg-slate-300 transform transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2.5" : ""
                     }`}
                 />
                 {/* Línea 2 */}
                 <span
-                  className={`h-0.5 w-6 bg-yellow-400 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                  className={`h-0.5 w-6 bg-slate-300 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
                     }`}
                 />
                 {/* Línea 3 */}
                 <span
-                  className={`h-0.5 w-6 bg-yellow-400 transform transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
+                  className={`h-0.5 w-6 bg-slate-300 transform transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
                     }`}
                 />
               </div>
@@ -176,35 +180,35 @@ const HomePage = () => {
           </div>
 
           {/* MENÚ MÓVIL DESPLEGABLE */}
-          <div className={`md:hidden absolute top-full left-0 right-0 bg-blue-900/95 backdrop-blur-md border-t border-yellow-400/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          <div className={`md:hidden absolute top-full left-0 right-0 bg-slate-700/95 backdrop-blur-md border-t border-slate-300/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
             }`}>
             <div className="px-6 py-6 space-y-4">
               <button
                 onClick={() => scrollToSection('#inicio')}
-                className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('#servicios')}
-                className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Servicios
               </button>
               <button
                 onClick={() => scrollToSection('#quienes')}
-                className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Quiénes Somos
               </button>
               <button
                 onClick={() => scrollToSection('#contacto')}
-                className="w-full text-left text-white font-medium py-3 px-4 rounded-xl transition-all duration-300 hover:text-yellow-400 hover:bg-yellow-400/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-yellow-400 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Contacto
               </button>
             </div>
@@ -212,21 +216,27 @@ const HomePage = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="inicio" className="min-h-screen w-full bg-gradient-to-br from-blue-900 to-slate-800 flex items-center justify-center text-center relative overflow-hidden">
-        {/* Background animado */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-yellow-400/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      {/* Hero Section - Usando CSS background */}
+      <section
+        id="inicio"
+        className="hero-bg min-h-screen w-full flex items-center justify-center text-center relative overflow-hidden"
+      >
+        {/* Blobs animados */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-400/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-slate-400/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        {/* Contenedor centrado para pantallas grandes */}
+        {/* Overlay semitransparente */}
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        {/* Contenido */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
           <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-2xl">
             VALENC COMPANY
           </h1>
-          <p className="hero-subtitle text-xl sm:text-2xl text-yellow-400 mb-8 font-light">
+          <p className="hero-subtitle text-xl sm:text-2xl text-slate-300 mb-8 font-light">
             Construcción y Maquinaria Especializada
           </p>
           <p className="hero-description text-lg sm:text-xl text-gray-200 mb-10 leading-relaxed">
@@ -234,7 +244,7 @@ const HomePage = () => {
           </p>
           <button
             onClick={() => scrollToSection('#contacto')}
-            className="cta-button inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-yellow-400/50 hover:-translate-y-3 hover:scale-105 animate-pulse"
+            className="cta-button inline-block bg-gradient-to-r from-slate-500 to-slate-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-slate-500/50 hover:-translate-y-3 hover:scale-105 animate-pulse"
           >
             Solicitar Cotización
           </button>
@@ -253,7 +263,7 @@ const HomePage = () => {
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative">
               Quiénes Somos
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-blue-500 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-slate-400 to-slate-600 rounded-full"></div>
             </h2>
 
             {/* Texto de presentación — ahora con estilos mejorados y coherentes */}
@@ -276,7 +286,7 @@ const HomePage = () => {
               }`} data-animate="quienes-card">
               {/* Texto en tarjeta blanca (igual look que otros cards) */}
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-blue-500"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">Nuestra misión</h3>
                 <p className="text-gray-600 text-lg mb-6">
                   Brindar soluciones integrales en construcción y maquinaria, priorizando seguridad, calidad y cumplimiento de plazos para maximizar el valor de cada proyecto.
@@ -287,7 +297,7 @@ const HomePage = () => {
 
                 <div className="grid sm:grid-cols-2 gap-4 mt-4">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-yellow-400 rounded-full text-white font-bold">C</div>
+                    <div className="w-12 h-12 flex items-center justify-center bg-slate-400 rounded-full text-white font-bold">C</div>
                     <div>
                       <h5 className="font-semibold text-slate-800">Compromiso</h5>
                       <p className="text-gray-600 text-sm">Cumplimos lo que prometemos.</p>
@@ -295,7 +305,7 @@ const HomePage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-blue-500 rounded-full text-white font-bold">S</div>
+                    <div className="w-12 h-12 flex items-center justify-center bg-slate-600 rounded-full text-white font-bold">S</div>
                     <div>
                       <h5 className="font-semibold text-slate-800">Seguridad</h5>
                       <p className="text-gray-600 text-sm">Protegemos a nuestro equipo y clientes.</p>
@@ -311,10 +321,9 @@ const HomePage = () => {
                   alt="Maquinaria y equipo"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/30 via-transparent to-slate-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
             </div>
-
 
             {/* Segunda fila - valores/beneficios (coherente con services) */}
             <div className={`grid lg:grid-cols-3 gap-8 transition-all duration-500 ${visibleElements.has('quienes-values')
@@ -350,7 +359,7 @@ const HomePage = () => {
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative">
               Nuestros Servicios
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-blue-500 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-slate-400 to-slate-600 rounded-full"></div>
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed">
               Ofrecemos soluciones integrales en construcción y alquiler de maquinaria especializada
@@ -366,7 +375,7 @@ const HomePage = () => {
               }`}
               data-animate="servicio-1">
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-blue-500"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
                   Ejecución de Obras Públicas
                 </h3>
@@ -380,7 +389,7 @@ const HomePage = () => {
                     'Proyectos de desarrollo urbano'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -392,7 +401,7 @@ const HomePage = () => {
                   alt="Obras públicas - construcción de carretera"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-transparent to-yellow-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
             </div>
 
@@ -408,10 +417,10 @@ const HomePage = () => {
                   alt="Construcción privada - andamios y estructura de edificio"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-transparent to-yellow-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group lg:order-2">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-blue-500"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
                   Construcción Privada
                 </h3>
@@ -425,7 +434,7 @@ const HomePage = () => {
                     'Proyectos arquitectónicos especializados'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -440,7 +449,7 @@ const HomePage = () => {
               }`}
               data-animate="servicio-3">
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-blue-500"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
                   Alquiler de Maquinaria Pesada y Equipos
                 </h3>
@@ -454,7 +463,7 @@ const HomePage = () => {
                     'Herramientas especializadas'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -466,7 +475,7 @@ const HomePage = () => {
                   alt="Maquinaria - excavadora y equipo en obra"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-transparent to-yellow-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
             </div>
 
@@ -482,11 +491,11 @@ const HomePage = () => {
                   alt="Venta de agregados - pilas de arena y grava"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-transparent to-yellow-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
 
               <div className="bg-white p-10 lg:p-14 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group lg:order-2 border border-gray-200">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 to-blue-500"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-10">
                   Venta de Agregados
                 </h3>
@@ -503,7 +512,7 @@ const HomePage = () => {
                       key={index}
                       className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2"
                     >
-                      <span className="text-yellow-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -515,7 +524,7 @@ const HomePage = () => {
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="py-20 w-full bg-gradient-to-br from-blue-900 to-slate-800 text-white">
+      <section id="contacto" className="py-20 w-full bg-gradient-to-br from-slate-600 to-slate-700 text-white">
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div
@@ -527,7 +536,7 @@ const HomePage = () => {
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 relative">
               Contáctanos
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-yellow-400 to-blue-500 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-slate-400 to-slate-300 rounded-full"></div>
             </h2>
             <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed">
               Estamos listos para hacer realidad tu próximo proyecto
@@ -553,11 +562,11 @@ const HomePage = () => {
                   key={index}
                   className="flex items-center p-6 lg:p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/15 hover:translate-x-3 group"
                 >
-                  <div className="w-16 h-16 lg:w-20 lg:h-20 bg-yellow-400 rounded-full flex items-center justify-center text-2xl lg:text-3xl mr-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 lg:w-20 lg:h-20 bg-slate-400 rounded-full flex items-center justify-center text-2xl lg:text-3xl mr-6 group-hover:scale-110 transition-transform duration-300">
                     {contact.icon}
                   </div>
                   <div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-yellow-400 mb-1">{contact.title}</h4>
+                    <h4 className="text-lg lg:text-xl font-semibold text-slate-300 mb-1">{contact.title}</h4>
                     <p className="text-gray-200 text-base lg:text-lg">{contact.info}</p>
                   </div>
                 </div>
@@ -578,7 +587,7 @@ const HomePage = () => {
               >
                 <div className="space-y-8">
                   <div>
-                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                    <label className="block text-slate-300 font-semibold mb-3 text-lg">
                       Nombre Completo *
                     </label>
                     <input
@@ -586,12 +595,12 @@ const HomePage = () => {
                       name="nombre"
                       placeholder="Tu nombre completo"
                       required
-                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-slate-300 focus:bg-white/15 focus:scale-105"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                    <label className="block text-slate-300 font-semibold mb-3 text-lg">
                       Email *
                     </label>
                     <input
@@ -599,29 +608,29 @@ const HomePage = () => {
                       name="email"
                       placeholder="tu@email.com"
                       required
-                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-slate-300 focus:bg-white/15 focus:scale-105"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                    <label className="block text-slate-300 font-semibold mb-3 text-lg">
                       Teléfono
                     </label>
                     <input
                       type="tel"
                       name="telefono"
                       placeholder="+51 999 999 999"
-                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 focus:scale-105"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-slate-300 focus:bg-white/15 focus:scale-105"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                    <label className="block text-slate-300 font-semibold mb-3 text-lg">
                       Servicio de Interés
                     </label>
                     <select
                       name="servicio"
-                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg transition-all duration-300 focus:outline-none focus:border-slate-300 focus:bg-white/15"
                     >
                       <option value="" className="bg-slate-800 text-white">Selecciona un servicio</option>
                       <option value="obras-publicas" className="bg-slate-800 text-white">Obras Públicas</option>
@@ -633,7 +642,7 @@ const HomePage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-yellow-400 font-semibold mb-3 text-lg">
+                    <label className="block text-slate-300 font-semibold mb-3 text-lg">
                       Mensaje *
                     </label>
                     <textarea
@@ -641,7 +650,7 @@ const HomePage = () => {
                       rows="5"
                       placeholder="Cuéntanos sobre tu proyecto..."
                       required
-                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-yellow-400 focus:bg-white/15 resize-none"
+                      className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg placeholder-white/60 transition-all duration-300 focus:outline-none focus:border-slate-300 focus:bg-white/15 resize-none"
                     ></textarea>
                   </div>
 
@@ -650,12 +659,12 @@ const HomePage = () => {
                     type="submit"
                     disabled={formStatus === 'sending'}
                     className={`w-full py-5 rounded-full font-bold text-xl transition-all duration-300 ${formStatus === 'sending'
-                      ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white cursor-not-allowed'
+                      ? 'bg-gradient-to-r from-slate-500 to-slate-600 text-white cursor-not-allowed'
                       : formStatus === 'sent'
                         ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
                         : formStatus === 'error'
                           ? 'bg-gradient-to-r from-red-500 to-red-600 text-white'
-                          : 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-blue-900 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-400/50'
+                          : 'bg-gradient-to-r from-slate-400 to-slate-500 text-white hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:shadow-slate-400/50'
                       }`}
                   >
                     {formStatus === 'sending'
@@ -683,7 +692,7 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white text-center py-12 border-t-4 border-yellow-400 w-full">
+      <footer className="bg-slate-800 text-white text-center py-12 border-t-4 border-slate-400 w-full">
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="text-lg lg:text-xl mb-3 font-medium">&copy; 2025 Valenc Company. Todos los derechos reservados.</p>
@@ -766,12 +775,12 @@ const HomePage = () => {
         }
 
         ::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+          background: linear-gradient(to bottom, #94a3b8, #64748b);
           border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #f59e0b, #d97706);
+          background: linear-gradient(to bottom, #64748b, #475569);
         }
 
         /* Contenedor centrado para pantallas grandes */
@@ -785,4 +794,4 @@ const HomePage = () => {
   );
 };
 
-export { HomePage };
+export {HomePage};

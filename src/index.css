@@ -1,10 +1,11 @@
 @import "tailwindcss";
- /* listo, tailwind css configurado */
+
+/* listo, tailwind css configurado */
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     margin: 0;
     /*padding: 0 20px;  👈 espacio a los costados */
@@ -30,9 +31,40 @@
   .shadow-3xl {
     box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
   }
-  
+
   .backdrop-blur-glass {
     backdrop-filter: blur(16px) saturate(180%);
     background-color: rgba(255, 255, 255, 0.1);
   }
+}
+
+
+/* En tu index.css, reemplaza la clase .hero-bg con esta versión mejorada */
+.hero-bg {
+  background-image: url('/assets/hero.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Efecto parallax opcional */
+}
+
+/* Fallback para diferentes rutas */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('./assets/hero.jpg'); /* Ruta alternativa */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  opacity: 0;
+}
+
+/* Si la imagen principal falla, usa el fallback */
+.hero-bg:not([style*="background-image"])::before {
+  opacity: 1;
 }
