@@ -41,11 +41,7 @@
 
 /* En tu index.css, reemplaza la clase .hero-bg con esta versión mejorada */
 .hero-bg {
-<<<<<<< HEAD
-  background-image: url('/assets/fnd.jpg'); /* Asegúrate de que la ruta sea correcta */
-=======
-  background-image: url('/assets/hero.jpg');
->>>>>>> dbdec0a7316c5a7853eca300bc273e6bf177fe13
+  background-image: url('./assets/hero.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -60,11 +56,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-<<<<<<< HEAD
-  background-image: url('./assets/fnd.jpg'); /* Ruta alternativa */
-=======
   background-image: url('./assets/hero.jpg'); /* Ruta alternativa */
->>>>>>> dbdec0a7316c5a7853eca300bc273e6bf177fe13
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
