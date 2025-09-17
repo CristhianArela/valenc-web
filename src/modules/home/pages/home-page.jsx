@@ -107,17 +107,17 @@ const HomePage = () => {
 
       {/* Navegación */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-slate-700/95 backdrop-blur-md py-3'
-        : 'bg-gradient-to-r from-slate-600 to-slate-700 py-4'
+          ? 'bg-[#354f63] backdrop-blur-md py-3'
+          : 'bg-[#354f63] py-4'
         }`}>
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <img 
-                src="/src/assets/logo.png" 
-                alt="Valenc Company Logo" 
-                className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto drop-shadow-lg"
+              <img
+                src="/src/assets/Logov2.png"
+                alt="Valenc Company Logo"
+                className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto "
               />
             </div>
 
@@ -125,13 +125,13 @@ const HomePage = () => {
             <div className="hidden md:flex space-x-8">
               <button
                 onClick={() => scrollToSection('#inicio')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
+                className="text-white font-bold px-4 py-2 rounded-full transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:-translate-y-1"
               >
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('#servicios')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
+                className="text-white font-bold px-4 py-2 rounded-full transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:-translate-y-1"
               >
                 Servicios
               </button>
@@ -139,14 +139,14 @@ const HomePage = () => {
               {/* Nuevo: Quiénes Somos */}
               <button
                 onClick={() => scrollToSection('#quienes')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
+                className="text-white font-bold px-4 py-2 rounded-full transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:-translate-y-1"
               >
                 Quiénes Somos
               </button>
 
               <button
                 onClick={() => scrollToSection('#contacto')}
-                className="text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:-translate-y-1"
+                className="text-white font-bold px-4 py-2 rounded-full transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:-translate-y-1"
               >
                 Contacto
               </button>
@@ -155,66 +155,68 @@ const HomePage = () => {
             {/* BOTÓN HAMBURGUESA MÓVIL */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center bg-slate-300/20 backdrop-blur-sm rounded-lg border border-slate-300/30 transition-all duration-300 hover:bg-slate-300/30 hover:scale-110"
+              className="md:hidden relative w-10 h-10 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 transition-all duration-300 hover:bg-white/20 hover:scale-110"
               aria-label="Menú de navegación"
             >
               <div className="relative w-6 h-6 flex flex-col justify-between items-center">
                 {/* Línea 1 */}
                 <span
-                  className={`h-0.5 w-6 bg-slate-300 transform transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2.5" : ""
+                  className={`h-0.5 w-6 bg-white transform transition-all duration-300 ${isMobileMenuOpen ? "rotate-45 translate-y-2.5" : ""
                     }`}
                 />
                 {/* Línea 2 */}
                 <span
-                  className={`h-0.5 w-6 bg-slate-300 transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
+                  className={`h-0.5 w-6 bg-white transition-all duration-300 ${isMobileMenuOpen ? "opacity-0" : "opacity-100"
                     }`}
                 />
                 {/* Línea 3 */}
                 <span
-                  className={`h-0.5 w-6 bg-slate-300 transform transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
+                  className={`h-0.5 w-6 bg-white transform transition-all duration-300 ${isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
                     }`}
                 />
               </div>
             </button>
-
           </div>
 
           {/* MENÚ MÓVIL DESPLEGABLE */}
-          <div className={`md:hidden absolute top-full left-0 right-0 bg-slate-700/95 backdrop-blur-md border-t border-slate-300/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
-            }`}>
+          <div
+            className={`md:hidden absolute top-full left-0 right-0 bg-[#354f63] backdrop-blur-md border-t border-white/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+          >
             <div className="px-6 py-6 space-y-4">
               <button
                 onClick={() => scrollToSection('#inicio')}
-                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-gray-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Inicio
               </button>
               <button
                 onClick={() => scrollToSection('#servicios')}
-                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-gray-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Servicios
               </button>
               <button
                 onClick={() => scrollToSection('#quienes')}
-                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-gray-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Quiénes Somos
               </button>
               <button
                 onClick={() => scrollToSection('#contacto')}
-                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-slate-300 hover:bg-slate-300/10 hover:translate-x-2 flex items-center group"
+                className="w-full text-left text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 hover:text-gray-200 hover:bg-white/10 hover:translate-x-2 flex items-center group"
               >
-                <span className="text-slate-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
+                <span className="text-gray-300 mr-3 transition-transform duration-300 group-hover:scale-110">•</span>
                 Contacto
               </button>
             </div>
           </div>
         </div>
       </nav>
+
 
       {/* Hero Section - Usando CSS background */}
       <section
@@ -794,4 +796,4 @@ const HomePage = () => {
   );
 };
 
-export {HomePage};
+export { HomePage };
