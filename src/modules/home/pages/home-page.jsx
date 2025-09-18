@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import MisionCard from "../../../components/MisionCard";
+import ContactInfo from "../../../components/ContactInfo";
 
 const HomePage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -107,15 +109,15 @@ const HomePage = () => {
 
       {/* Navegación */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-[#354f63] backdrop-blur-md py-3'
-          : 'bg-[#354f63] py-4'
+        ? 'bg-[#1c3a5a] backdrop-blur-md py-3'
+        : 'bg-[#1c3a5a] py-4'
         }`}>
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <img
-                src="/src/assets/Logov2.png"
+                src="/src/assets/logo.png"
                 alt="Valenc Company Logo"
                 className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto "
               />
@@ -180,7 +182,7 @@ const HomePage = () => {
 
           {/* MENÚ MÓVIL DESPLEGABLE */}
           <div
-            className={`md:hidden absolute top-full left-0 right-0 bg-[#354f63] backdrop-blur-md border-t border-white/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+            className={`md:hidden absolute top-full left-0 right-0 bg-[#1c3a5a] backdrop-blur-md border-t border-white/20 transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
               }`}
           >
             <div className="px-6 py-6 space-y-4">
@@ -225,9 +227,9 @@ const HomePage = () => {
       >
         {/* Blobs animados */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-slate-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-slate-400/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#1c3a5a]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#1c3a5a]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-[#1c3a5a]/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
         {/* Overlay semitransparente */}
@@ -246,7 +248,7 @@ const HomePage = () => {
           </p>
           <button
             onClick={() => scrollToSection('#contacto')}
-            className="cta-button inline-block bg-gradient-to-r from-slate-500 to-slate-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-slate-500/50 hover:-translate-y-3 hover:scale-105 animate-pulse"
+            className="cta-button inline-block bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-2xl hover:shadow-[#1c3a5a]/50 hover:-translate-y-3 hover:scale-105 animate-pulse"
           >
             Solicitar Cotización
           </button>
@@ -265,80 +267,64 @@ const HomePage = () => {
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative">
               Quiénes Somos
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-slate-400 to-slate-600 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a] rounded-full"></div>
             </h2>
 
-            {/* Texto de presentación — ahora con estilos mejorados y coherentes */}
+            {/* Texto de presentación */}
             <p className="text-gray-600 text-lg sm:text-xl lg:text-xl font-light leading-relaxed max-w-3xl mx-auto px-4 md:px-0 mb-4 tracking-wide">
               Somos <span className="font-semibold text-slate-800">Valenc Company</span> — especialistas en obras públicas y privadas y en alquiler de maquinaria pesada.
               Combinamos experiencia local con procesos modernos para entregar proyectos seguros, eficientes y sostenibles. Nuestro enfoque es técnico, responsable y orientado a resultados.
             </p>
 
-            {/* Pequeña nota decorativa / llamado */}
+            {/* Nota decorativa */}
             <p className="text-sm text-slate-500 max-w-2xl mx-auto">
               Operamos con normas de seguridad y equipos propios para cumplir plazos y calidad en cada proyecto.
             </p>
           </div>
 
           <div className="space-y-12">
-            {/* Bloque principal: texto + imagen (ya existía) */}
-            <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-500 ${visibleElements.has('quienes-card')
-              ? 'opacity-100 translate-x-0'
-              : 'opacity-0 -translate-x-24'
-              }`} data-animate="quienes-card">
-              {/* Texto en tarjeta blanca (igual look que otros cards) */}
-              <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
-                <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">Nuestra misión</h3>
-                <p className="text-gray-600 text-lg mb-6">
-                  Brindar soluciones integrales en construcción y maquinaria, priorizando seguridad, calidad y cumplimiento de plazos para maximizar el valor de cada proyecto.
-                </p>
+            {/* Bloque principal: texto + imagen */}
+            <div
+              className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-500 ${visibleElements.has('quienes-card')
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-24'
+                }`}
+              data-animate="quienes-card"
+            >
+              {/* Aquí ya usas el componente en vez del div */}
+              <MisionCard />
 
-                <h4 className="text-xl font-semibold text-slate-800 mb-3">Visión</h4>
-                <p className="text-gray-600 mb-6">Ser referentes regionales en ejecución de obras y servicios de maquinaria, innovando continuamente y cuidando el entorno.</p>
-
-                <div className="grid sm:grid-cols-2 gap-4 mt-4">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-slate-400 rounded-full text-white font-bold">C</div>
-                    <div>
-                      <h5 className="font-semibold text-slate-800">Compromiso</h5>
-                      <p className="text-gray-600 text-sm">Cumplimos lo que prometemos.</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-slate-600 rounded-full text-white font-bold">S</div>
-                    <div>
-                      <h5 className="font-semibold text-slate-800">Seguridad</h5>
-                      <p className="text-gray-600 text-sm">Protegemos a nuestro equipo y clientes.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Imagen con overlay (mismo feel que otras cards) */}
+              {/* Imagen con overlay */}
               <div className="rounded-3xl overflow-hidden shadow-xl transition-all duration-400 hover:scale-105 relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1581090700227-4c4f50b06558?auto=format&fit=crop&w=1200&q=80"
+                  src="/src/assets/maquinaria.jpg"
                   alt="Maquinaria y equipo"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/30 via-transparent to-slate-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1c3a5a]/30 via-transparent to-[#1c3a5a]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
             </div>
 
-            {/* Segunda fila - valores/beneficios (coherente con services) */}
-            <div className={`grid lg:grid-cols-3 gap-8 transition-all duration-500 ${visibleElements.has('quienes-values')
-              ? 'opacity-100 translate-x-0'
-              : 'opacity-0 -translate-x-24'
-              }`} data-animate="quienes-values">
+            {/* Segunda fila - valores */}
+            <div
+              className={`grid lg:grid-cols-3 gap-8 transition-all duration-500 ${visibleElements.has('quienes-values')
+                ? 'opacity-100 translate-x-0'
+                : 'opacity-0 -translate-x-24'
+                }`}
+              data-animate="quienes-values"
+            >
               {[
                 { title: 'Equipos Modernos', text: 'Contamos con maquinaria reciente y mantenida para mayor eficiencia.' },
                 { title: 'Equipo Especializado', text: 'Personal capacitado en seguridad y operación de equipos.' },
                 { title: 'Soporte Integral', text: 'Asesoría y logística completa para tu proyecto.' }
               ].map((item, i) => (
-                <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all">
-                  <h4 className="text-xl font-semibold text-slate-800 mb-3">{item.title}</h4>
+                <div
+                  key={i}
+                  className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-all"
+                >
+                  <h4 className="text-xl font-semibold text-slate-800 mb-3">
+                    {item.title}
+                  </h4>
                   <p className="text-gray-600">{item.text}</p>
                 </div>
               ))}
@@ -346,6 +332,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
 
       {/* Servicios */}
       <section id="servicios" className="py-20 w-full bg-gradient-to-br from-gray-50 to-gray-200">
@@ -361,7 +348,7 @@ const HomePage = () => {
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 relative">
               Nuestros Servicios
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-slate-400 to-slate-600 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a] rounded-full"></div>
             </h2>
             <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed">
               Ofrecemos soluciones integrales en construcción y alquiler de maquinaria especializada
@@ -377,7 +364,7 @@ const HomePage = () => {
               }`}
               data-animate="servicio-1">
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a]"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
                   Ejecución de Obras Públicas
                 </h3>
@@ -391,7 +378,7 @@ const HomePage = () => {
                     'Proyectos de desarrollo urbano'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-[#1c3a5a] text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -403,7 +390,7 @@ const HomePage = () => {
                   alt="Obras públicas - construcción de carretera"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1c3a5a]/40 via-transparent to-[#1c3a5a]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
             </div>
 
@@ -415,14 +402,14 @@ const HomePage = () => {
               data-animate="servicio-2">
               <div className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-400 hover:scale-105 relative group lg:order-1">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/79/Scaffolding_for_a_building_under_construction.jpg"
+                  src="https://static.vecteezy.com/system/resources/previews/011/295/508/non_2x/construction-site-and-bulldozzer-photo.jpg"
                   alt="Construcción privada - andamios y estructura de edificio"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1c3a5a]/40 via-transparent to-[#1c3a5a]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group lg:order-2">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a]"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
                   Construcción Privada
                 </h3>
@@ -436,7 +423,7 @@ const HomePage = () => {
                     'Proyectos arquitectónicos especializados'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-[#1c3a5a] text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -451,7 +438,7 @@ const HomePage = () => {
               }`}
               data-animate="servicio-3">
               <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a]"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-8">
                   Alquiler de Maquinaria Pesada y Equipos
                 </h3>
@@ -465,7 +452,7 @@ const HomePage = () => {
                     'Herramientas especializadas'
                   ].map((item, index) => (
                     <li key={index} className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2">
-                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-[#1c3a5a] text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -477,7 +464,7 @@ const HomePage = () => {
                   alt="Maquinaria - excavadora y equipo en obra"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1c3a5a]/40 via-transparent to-[#1c3a5a]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
             </div>
 
@@ -493,11 +480,11 @@ const HomePage = () => {
                   alt="Venta de agregados - pilas de arena y grava"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-slate-600/40 via-transparent to-slate-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1c3a5a]/40 via-transparent to-[#1c3a5a]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
               </div>
 
               <div className="bg-white p-10 lg:p-14 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group lg:order-2 border border-gray-200">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a]"></div>
                 <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-10">
                   Venta de Agregados
                 </h3>
@@ -514,7 +501,7 @@ const HomePage = () => {
                       key={index}
                       className="flex items-center transition-all duration-300 hover:text-slate-800 hover:translate-x-2"
                     >
-                      <span className="text-slate-400 text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
+                      <span className="text-[#1c3a5a] text-2xl mr-4 transition-transform duration-300 group-hover:scale-110">•</span>
                       {item}
                     </li>
                   ))}
@@ -526,19 +513,22 @@ const HomePage = () => {
       </section>
 
       {/* Contacto */}
-      <section id="contacto" className="py-20 w-full bg-gradient-to-br from-slate-600 to-slate-700 text-white">
+      <section
+        id="contacto"
+        className="py-20 w-full bg-gradient-to-br from-[#1c3a5a] to-[#1c3a5a] text-white"
+      >
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div
-            className={`text-center mb-20 transition-all duration-500 ${visibleElements.has('contacto-header')
-              ? 'opacity-100 translate-x-0'
-              : 'opacity-0 translate-x-16'
+            className={`text-center mb-20 transition-all duration-500 ${visibleElements.has("contacto-header")
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-16"
               }`}
             data-animate="contacto-header"
           >
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 relative">
               Contáctanos
-              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-slate-400 to-slate-300 rounded-full"></div>
+              <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a] rounded-full"></div>
             </h2>
             <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed">
               Estamos listos para hacer realidad tu próximo proyecto
@@ -546,40 +536,14 @@ const HomePage = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* Información de contacto */}
-            <div
-              className={`space-y-8 transition-all duration-500 ${visibleElements.has('contacto-info')
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 -translate-x-16'
-                }`}
-              data-animate="contacto-info"
-            >
-              {[
-                { icon: '✉', title: 'Email', info: 'info@valenccompany.com' },
-                { icon: '📞', title: 'Teléfono', info: '+51 914 112 487' },
-                { icon: '📍', title: 'Ubicación', info: 'Puno' },
-                { icon: '🕒', title: 'Horarios', info: 'Lun - Vie: 8:00 AM - 6:00 PM' }
-              ].map((contact, index) => (
-                <div
-                  key={index}
-                  className="flex items-center p-6 lg:p-8 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 transition-all duration-300 hover:bg-white/15 hover:translate-x-3 group"
-                >
-                  <div className="w-16 h-16 lg:w-20 lg:h-20 bg-slate-400 rounded-full flex items-center justify-center text-2xl lg:text-3xl mr-6 group-hover:scale-110 transition-transform duration-300">
-                    {contact.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-lg lg:text-xl font-semibold text-slate-300 mb-1">{contact.title}</h4>
-                    <p className="text-gray-200 text-base lg:text-lg">{contact.info}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            {/* Información de contacto con Lucide Icons */}
+            <ContactInfo visibleElements={visibleElements} />
 
             {/* FORMULARIO CON FORMSPREE */}
             <div
-              className={`transition-all duration-500 ${visibleElements.has('contacto-form')
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 translate-x-16'
+              className={`transition-all duration-500 ${visibleElements.has("contacto-form")
+                  ? "opacity-100 translate-x-0"
+                  : "opacity-0 translate-x-16"
                 }`}
               data-animate="contacto-form"
             >
@@ -634,12 +598,30 @@ const HomePage = () => {
                       name="servicio"
                       className="w-full p-4 lg:p-5 border-2 border-white/20 rounded-xl bg-white/10 text-white text-lg transition-all duration-300 focus:outline-none focus:border-slate-300 focus:bg-white/15"
                     >
-                      <option value="" className="bg-slate-800 text-white">Selecciona un servicio</option>
-                      <option value="obras-publicas" className="bg-slate-800 text-white">Obras Públicas</option>
-                      <option value="construccion-privada" className="bg-slate-800 text-white">Construcción Privada</option>
-                      <option value="alquiler-maquinaria" className="bg-slate-800 text-white">Alquiler de Maquinaria</option>
-                      <option value="venta-agregados" className="bg-slate-800 text-white">Venta de Agregados</option>
-                      <option value="consultoria" className="bg-slate-800 text-white">Consultoría</option>
+                      <option value="" className="bg-[#1c3a5a] text-white">
+                        Selecciona un servicio
+                      </option>
+                      <option value="obras-publicas" className="bg-[#1c3a5a] text-white">
+                        Obras Públicas
+                      </option>
+                      <option
+                        value="construccion-privada"
+                        className="bg-[#1c3a5a] text-white"
+                      >
+                        Construcción Privada
+                      </option>
+                      <option
+                        value="alquiler-maquinaria"
+                        className="bg-[#1c3a5a] text-white"
+                      >
+                        Alquiler de Maquinaria
+                      </option>
+                      <option value="venta-agregados" className="bg-[#1c3a5a] text-white">
+                        Venta de Agregados
+                      </option>
+                      <option value="consultoria" className="bg-[#1c3a5a] text-white">
+                        Consultoría
+                      </option>
                     </select>
                   </div>
 
@@ -659,28 +641,27 @@ const HomePage = () => {
                   {/* BOTÓN CON ESTADOS MEJORADOS */}
                   <button
                     type="submit"
-                    disabled={formStatus === 'sending'}
-                    className={`w-full py-5 rounded-full font-bold text-xl transition-all duration-300 ${formStatus === 'sending'
-                      ? 'bg-gradient-to-r from-slate-500 to-slate-600 text-white cursor-not-allowed'
-                      : formStatus === 'sent'
-                        ? 'bg-gradient-to-r from-green-500 to-green-600 text-white'
-                        : formStatus === 'error'
-                          ? 'bg-gradient-to-r from-red-500 to-red-600 text-white'
-                          : 'bg-gradient-to-r from-slate-400 to-slate-500 text-white hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:shadow-slate-400/50'
+                    disabled={formStatus === "sending"}
+                    className={`w-full py-5 rounded-full font-bold text-xl transition-all duration-300 ${formStatus === "sending"
+                        ? "bg-gradient-to-r from-slate-500 to-slate-600 text-white cursor-not-allowed"
+                        : formStatus === "sent"
+                          ? "bg-gradient-to-r from-green-500 to-green-600 text-white"
+                          : formStatus === "error"
+                            ? "bg-gradient-to-r from-red-500 to-red-600 text-white"
+                            : "bg-gradient-to-r from-[#1c3a5a] to-[#1c3a5a] text-white hover:-translate-y-2 hover:scale-105 hover:shadow-2xl hover:shadow-[#1c3a5a]/50"
                       }`}
                   >
-                    {formStatus === 'sending'
-                      ? 'Enviando...'
-                      : formStatus === 'sent'
-                        ? '¡Mensaje Enviado!'
-                        : formStatus === 'error'
-                          ? 'Error - Intenta de nuevo'
-                          : 'Enviar Mensaje'
-                    }
+                    {formStatus === "sending"
+                      ? "Enviando..."
+                      : formStatus === "sent"
+                        ? "¡Mensaje Enviado!"
+                        : formStatus === "error"
+                          ? "Error - Intenta de nuevo"
+                          : "Enviar Mensaje"}
                   </button>
 
                   {/* Mensaje de éxito */}
-                  {formStatus === 'sent' && (
+                  {formStatus === "sent" && (
                     <div className="text-center text-green-300 bg-green-500/10 border border-green-500/20 rounded-lg p-4">
                       <p className="font-semibold">¡Gracias por contactarnos!</p>
                       <p className="text-sm">Te responderemos en menos de 24 horas.</p>
@@ -693,19 +674,20 @@ const HomePage = () => {
         </div>
       </section>
 
+
       {/* Footer */}
-      <footer className="bg-slate-800 text-white text-center py-12 border-t-4 border-slate-400 w-full">
+      <footer className="bg-[#1c3a5a] text-white text-center py-12 border-t-4 border-[#1c3a5a] w-full">
         {/* Contenedor centrado para pantallas grandes */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="text-lg lg:text-xl mb-3 font-medium">&copy; 2025 Valenc Company. Todos los derechos reservados.</p>
-          <p className="text-gray-400 text-base lg:text-lg">Construyendo el futuro con excelencia y compromiso</p>
+          <p className="text-gray-300 text-base lg:text-lg">Construyendo el futuro con excelencia y compromiso</p>
         </div>
       </footer>
 
       {/* Botón flotante de WhatsApp */}
       <button
         onClick={openWhatsApp}
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl hover:shadow-green-500/50 transition-all duration-300 hover:scale-110 hover:-translate-y-1 flex items-center justify-center group animate-pulse"
+        className="fixed bottom-6 right-6 z-50 bg-[#1c3a5a] hover:bg-[#1c3a5a] text-white w-16 h-16 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:-translate-y-1 flex items-center justify-center group"
         aria-label="Contactar por WhatsApp"
       >
         {/* Ícono de WhatsApp SVG */}
@@ -716,16 +698,6 @@ const HomePage = () => {
         >
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.119" />
         </svg>
-
-        {/* Tooltip */}
-        <div className="absolute right-20 top-1/2 transform -translate-y-1/2 bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap shadow-xl">
-          ¡Conversa con nosotros!
-          <div className="absolute top-1/2 right-0 transform translate-x-1 -translate-y-1/2 w-0 h-0 border-l-4 border-r-0 border-t-4 border-b-4 border-l-slate-800 border-t-transparent border-b-transparent"></div>
-        </div>
-
-        {/* Círculos de animación */}
-        <div className="absolute inset-0 rounded-full border-4 border-green-400 opacity-75 animate-ping"></div>
-        <div className="absolute inset-0 rounded-full border-2 border-green-300 opacity-50 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
       </button>
 
       {/* CSS personalizado dentro del componente */}
@@ -777,12 +749,12 @@ const HomePage = () => {
         }
 
         ::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #94a3b8, #64748b);
+          background: linear-gradient(to bottom, #1c3a5a, #1c3a5a);
           border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(to bottom, #64748b, #475569);
+          background: linear-gradient(to bottom, #1c3a5a, #1c3a5a);
         }
 
         /* Contenedor centrado para pantallas grandes */
@@ -796,4 +768,4 @@ const HomePage = () => {
   );
 };
 
-export {HomePage};
+export { HomePage };

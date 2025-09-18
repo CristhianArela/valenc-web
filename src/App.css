@@ -44,7 +44,7 @@
 }
 /* Agregar al CSS global */
 .hero-bg {
-  background-image: url('/assets/hero.jpg'); /* o '/assets/hero.jpg' si lo copias a public */
+  background-image: url('/assets/fnd.jpg'); /* o '/assets/hero.jpg' si lo copias a public */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
