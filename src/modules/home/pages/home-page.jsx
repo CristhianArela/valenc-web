@@ -117,7 +117,7 @@ const HomePage = () => {
           <div className="flex justify-between items-center">
             <div className="flex items-center">
               <img
-                src="/src/assets/logo.png"
+                src="/logo.png"
                 alt="Valenc Company Logo"
                 className="h-14 sm:h-16 md:h-18 lg:h-20 w-auto "
               />
@@ -297,7 +297,7 @@ const HomePage = () => {
               {/* Imagen con overlay */}
               <div className="rounded-3xl overflow-hidden shadow-xl transition-all duration-400 hover:scale-105 relative group">
                 <img
-                  src="/src/assets/maquinaria.jpg"
+                  src="/maquinaria.jpg"
                   alt="Maquinaria y equipo"
                   className="w-full h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
