@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  base: '/valenc-web/',   // 👈 MUY IMPORTANTE (nombre exacto de tu repo)
   server: {
     port: 5010,
     host: true,
