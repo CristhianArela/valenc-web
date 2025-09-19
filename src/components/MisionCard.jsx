@@ -1,4 +1,4 @@
-import { BadgeCheck, ShieldCheck } from "lucide-react";
+import { Handshake, ShieldCheck } from "lucide-react";
 
 export default function MisionCard() {
   return (
@@ -24,7 +24,7 @@ export default function MisionCard() {
         {/* Compromiso */}
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 flex items-center justify-center bg-slate-400 rounded-full text-white">
-            <BadgeCheck className="w-6 h-6" strokeWidth={2} />
+            <Handshake className="w-6 h-6" strokeWidth={2} />
           </div>
           <div>
             <h5 className="font-semibold text-slate-800">Compromiso</h5>
@@ -35,7 +35,7 @@ export default function MisionCard() {
         {/* Seguridad */}
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 flex items-center justify-center bg-slate-600 rounded-full text-white">
-            <ShieldCheck className="w-6 h-6" strokeWidth={2} />
+            <ShieldCheck className="w-6 h-6" strokeWidth={3} />
           </div>
           <div>
             <h5 className="font-semibold text-slate-800">Seguridad</h5>
