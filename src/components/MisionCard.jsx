@@ -35,7 +35,7 @@ export default function MisionCard() {
         {/* Seguridad */}
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 flex items-center justify-center bg-slate-600 rounded-full text-white">
-            <ShieldCheck className="w-6 h-6" strokeWidth={3} />
+            <ShieldCheck className="w-6 h-6" strokeWidth={2} />
           </div>
           <div>
             <h5 className="font-semibold text-slate-800">Seguridad</h5>
