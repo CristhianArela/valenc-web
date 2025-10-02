@@ -5,7 +5,7 @@ export default function MisionCard() {
     <div className="bg-white p-10 lg:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-400 hover:-translate-y-3 relative overflow-hidden group">
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-slate-400 to-slate-600"></div>
       
-      <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">
+      <h3 className="text-3xl lg:text-4xl font-bold text-slate-800 mb-6">                                                                                                            
         Nuestra misión
       </h3>
       <p className="text-gray-600 text-lg mb-6">
@@ -35,7 +35,7 @@ export default function MisionCard() {
         {/* Seguridad */}
         <div className="flex items-start space-x-4">
           <div className="w-12 h-12 flex items-center justify-center bg-slate-600 rounded-full text-white">
-            <ShieldCheck className="w-6 h-6" strokeWidth={2.5} />
+            <ShieldCheck className="w-7 h-7" strokeWidth={2.5} />
           </div>
           <div>
             <h5 className="font-semibold text-slate-800">Seguridad</h5>

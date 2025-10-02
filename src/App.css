@@ -1,3 +1,10 @@
+/* Evita scroll horizontal en toda la web */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
 #root {
   width: 100%;       /* ocupa todo el ancho */
   max-width: none;   /* sin límite */
@@ -42,11 +49,6 @@
 .read-the-docs {
   color: #888;
 }
-/* Agregar al CSS global */
-.hero-bg {
-  background-image: url('/assets/fnd.jpg'); /* o '/assets/hero.jpg' si lo copias a public */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
+
 
