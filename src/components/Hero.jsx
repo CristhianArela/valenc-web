@@ -22,15 +22,9 @@ const Hero = ({ scrollToSection }) => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            <span className="text-white text-sm font-semibold">
-              Innovación y Solidez en Construcción
-            </span>
-          </div>
-
+          
           <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 drop-shadow-2xl leading-tight">
-            VALENC
+           <br /> VALENC
             <br />
             COMPANY
           </h1>
